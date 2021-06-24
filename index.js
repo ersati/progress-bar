@@ -39,8 +39,8 @@ leftBtn.addEventListener('click', () => {
   }
 
   progressNumber--;
-  circles[progressNumber].classList.remove('bg-green');
-  circles[progressNumber].classList.add('bg-white');
+  circles[progressNumber].classList.remove('bg-green', 'circle-white');
+  circles[progressNumber].classList.add('circle-grey');
   num.textContent = progressNumber;
 });
 
@@ -52,6 +52,7 @@ rightBtn.addEventListener('click', () => {
   }
   updateProgress();
   progressNumber++;
-  circles[progressNumber - 1].classList.add('bg-green');
+  circles[progressNumber - 1].classList.remove('circle-grey');
+  circles[progressNumber - 1].classList.add('bg-green', 'circle-white');
   num.textContent = progressNumber;
 });
