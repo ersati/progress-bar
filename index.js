@@ -7,7 +7,7 @@ const leftBtn = document.querySelector('.left-btn');
 const rightBtn = document.querySelector('.right-btn');
 const num = document.querySelector('.number');
 let progressNumber = 2;
-// console.log(bars, circles);
+
 function checkButtons() {
   rightBtn.disabled = false;
   leftBtn.disabled = false;
@@ -29,7 +29,6 @@ function updateProgress() {
 
 leftBtn.addEventListener('click', () => {
   if (progressNumber <= 0) {
-    // console.log(progressNumber);
     checkButtons();
 
     return;
@@ -39,12 +38,11 @@ leftBtn.addEventListener('click', () => {
   circles[progressNumber].classList.remove('bg-green', 'circle-white');
   circles[progressNumber].classList.add('circle-grey');
   num.textContent = progressNumber;
-  bars[progressNumber -1].style.width = '0%';
+  bars[progressNumber - 1].style.width = '0%';
 });
 
 rightBtn.addEventListener('click', () => {
   if (progressNumber >= circles.length) {
-    // console.log(progressNumber);
     checkButtons();
     return;
   }
@@ -53,6 +51,5 @@ rightBtn.addEventListener('click', () => {
   circles[progressNumber - 1].classList.remove('circle-grey');
   circles[progressNumber - 1].classList.add('bg-green', 'circle-white');
   bars[progressNumber - 2].style.width = '100%';
-  console.log(bars[progressNumber - 2]);
   num.textContent = progressNumber;
 });
