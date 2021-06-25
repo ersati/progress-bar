@@ -35,10 +35,12 @@ leftBtn.addEventListener('click', () => {
   }
 
   progressNumber--;
-  circles[progressNumber].classList.remove('bg-green', 'circle-white');
-  circles[progressNumber].classList.add('circle-grey');
+  // circles[progressNumber].classList.remove('bg-green', 'circle-white');
+  // circles[progressNumber].classList.add('circle-grey');
   num.textContent = progressNumber;
-  bars[progressNumber - 1].style.width = '0%';
+  // bars[progressNumber - 1].style.width = '0%';
+  circles[progressNumber].style.animation = 'bgout 1s 2s 1 forwards';
+  bars[progressNumber - 1].style.animation = 'moveout 2s 1 forwards';
 });
 
 rightBtn.addEventListener('click', () => {
@@ -48,8 +50,10 @@ rightBtn.addEventListener('click', () => {
   }
   updateProgress();
   progressNumber++;
-  circles[progressNumber - 1].classList.remove('circle-grey');
-  circles[progressNumber - 1].classList.add('bg-green', 'circle-white');
-  bars[progressNumber - 2].style.width = '100%';
+  // circles[progressNumber - 1].classList.remove('circle-grey');
+  // circles[progressNumber - 1].classList.add('bg-green', 'circle-white');
+  circles[progressNumber - 1].style.animation = 'bgin 1s 2s 1 forwards';
+  // bars[progressNumber - 2].style.width = '100%';
+  bars[progressNumber - 2].style.animation = 'movein 2s 1 forwards';
   num.textContent = progressNumber;
 });
