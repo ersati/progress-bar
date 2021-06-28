@@ -6,7 +6,7 @@ const bars = document.querySelectorAll('.bar');
 const leftBtn = document.querySelector('.left-btn');
 const rightBtn = document.querySelector('.right-btn');
 const num = document.querySelector('.number');
-let progressNumber = 2;
+let progressNumber = 1;
 
 function checkButtons() {
   rightBtn.disabled = false;
