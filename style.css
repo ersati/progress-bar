@@ -39,6 +39,7 @@ h2 {
 
   to {
     background-color: green;
+    color: white important!;
   }
 }
 
@@ -49,5 +50,8 @@ h2 {
 
   to {
     background-color: white;
+    border: 1px solid grey;
+    color: grey !important;
+    border-radius: 50%;
   }
 }

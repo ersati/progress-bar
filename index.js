@@ -38,22 +38,36 @@ leftBtn.addEventListener('click', () => {
   // circles[progressNumber].classList.remove('bg-green', 'circle-white');
   // circles[progressNumber].classList.add('circle-grey');
   num.textContent = progressNumber;
+
   // bars[progressNumber - 1].style.width = '0%';
   circles[progressNumber].style.animation = 'bgout 1s 2s 1 forwards';
-  bars[progressNumber - 1].style.animation = 'moveout 2s 1 forwards';
+  circles[progressNumber].children.item(0).classList.remove('text-white');
+  circles[progressNumber].children.item(0).classList.add('text-grey-darker');
+  if (progressNumber > 0) {
+    bars[progressNumber - 1].style.animation = 'moveout 2s 1 forwards';
+  } else {
+    bars[progressNumber].style.animation = 'moveout 2s 1 forwards';
+  }
 });
 
 rightBtn.addEventListener('click', () => {
+  console.log(progressNumber);
   if (progressNumber >= circles.length) {
     checkButtons();
     return;
   }
-  updateProgress();
-  progressNumber++;
+  // updateProgress();
   // circles[progressNumber - 1].classList.remove('circle-grey');
   // circles[progressNumber - 1].classList.add('bg-green', 'circle-white');
-  circles[progressNumber - 1].style.animation = 'bgin 1s 2s 1 forwards';
+  console.log(circles[progressNumber].children.item(0));
+  circles[progressNumber].style.animation = 'bgin 1s 2s 1 forwards';
+  circles[progressNumber].children.item(0).classList.add('text-white');
+  circles[progressNumber].children.item(0).classList.remove('text-grey-darker');
+  if (progressNumber < bars.length) {
+    bars[progressNumber].style.animation = 'movein 2s 1 forwards';
+  }
+
+  progressNumber++;
   // bars[progressNumber - 2].style.width = '100%';
-  bars[progressNumber - 2].style.animation = 'movein 2s 1 forwards';
   num.textContent = progressNumber;
 });
